@@ -9,7 +9,7 @@ class CronoCard extends React.Component {
     return (
 	  	<Row className="justify-content-md-center mt-4">
         <Col md="4">
-          <Card>
+          <Card id={this.props.id}>
             <Card.Header>
               <h2>{this.props.title}</h2>
               <p>{this.props.project}</p>

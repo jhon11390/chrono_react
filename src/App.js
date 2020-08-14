@@ -16,7 +16,8 @@ class App extends React.Component {
       data: Data,
       title: '',
       project: '',
-      form_crono: false
+      form_crono: false,
+      number: 4
     }
   }
   render() {
@@ -30,6 +31,7 @@ class App extends React.Component {
           {this.state.data.map((date)=> {
             return (
               <CronoCard 
+                id= {date.id}
                 title= {date.title}
                 project= {date.project}
                 time= {date.time}
@@ -63,10 +65,11 @@ class App extends React.Component {
   handlekeypress(e) {
     e.preventDefault()
     this.setState({
-      data: this.state.data.concat({title: this.state.title, project: this.state.project, time: "00:00:00"}),
+      data: this.state.data.concat({id: this.state.number, title: this.state.title, project: this.state.project, time: "00:00:00"}),
       form_crono: false,
       title: '',
-      project: ''
+      project: '',
+      number: this.state.number + 1
     })
   }
 }
