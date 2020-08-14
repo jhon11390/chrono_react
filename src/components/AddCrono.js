@@ -8,7 +8,7 @@ class AddCrono extends React.Component {
     return (
       <Row className="justify-content-md-center mt-4">
         <Col md="auto">
-          <Alert.Link href="#"><FaPlus /></Alert.Link>
+          <Alert.Link href="#" onClick={this.props.addcrono}><FaPlus /></Alert.Link>
         </Col>
       </Row>
     )
