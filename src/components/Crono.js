@@ -4,12 +4,12 @@ import { FaTrashAlt, FaEdit} from 'react-icons/fa';
 
 
 class CronoCard extends React.Component {
-
+  
   render(){
     return (
 	  	<Row className="justify-content-md-center mt-4">
         <Col md="4">
-          <Card id={this.props.id}>
+          <Card key={this.props.id}>
             <Card.Header>
               <h2>{this.props.title}</h2>
               <p>{this.props.project}</p>
@@ -25,7 +25,7 @@ class CronoCard extends React.Component {
               <Card.Text>
                 <Row>
                   <Col md={{ span: 2, offset: 10}}>
-                    <Alert.Link href="#"><FaTrashAlt /> </Alert.Link>
+                    <Alert.Link href="#" onClick={() => this.props.delete(this.props.id)}><FaTrashAlt /> </Alert.Link>
                     <Alert.Link href="#"><FaEdit /></Alert.Link>
                   </Col>
                 </Row>

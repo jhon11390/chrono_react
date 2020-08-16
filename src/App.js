@@ -12,6 +12,7 @@ class App extends React.Component {
     this.hide_form= this.hide_form.bind(this)
     this.show_form= this.show_form.bind(this)
     this.handlekeypress= this.handlekeypress.bind(this)
+    this.deleteCrono= this.deleteCrono.bind(this)
     this.state = {
       data: Data,
       title: '',
@@ -28,13 +29,14 @@ class App extends React.Component {
             <h1>Timers</h1>
           </Col>
         </Row>
-          {this.state.data.map((date)=> {
+          {this.state.data.map((date, i)=> {
             return (
               <CronoCard 
-                id= {date.id}
+                id= {i}
                 title= {date.title}
                 project= {date.project}
                 time= {date.time}
+                delete= {this.deleteCrono}
               />
             )
           })}
@@ -70,6 +72,15 @@ class App extends React.Component {
       title: '',
       project: '',
       number: this.state.number + 1
+    })
+  }
+  deleteCrono(id) {
+    const data = this.state.data
+    const index = id
+    this.setState({
+      data: data.filter((date, i) =>
+        index !== i
+      )
     })
   }
 }
