@@ -1,7 +1,7 @@
 import React from 'react';
 import {Row, Col, Form, Button} from "react-bootstrap";
 
-class FormCrono extends React.Component {
+class UpdateCrono extends React.Component {
 
   render(){
     return (
@@ -24,12 +24,12 @@ class FormCrono extends React.Component {
             </Form.Group>
             <Row>
               <Col md="6">
-                <Button variant="success" type="submit" size="lg" block onClick={this.props.crear}>
-                  Create
+                <Button variant="primary" type="submit" size="lg" block>
+                  Update
                 </Button>
               </Col>
               <Col md="6">
-                <Button variant="danger" type="submit" size="lg" block onClick={this.props.cancelar}>
+                <Button variant="danger" type="submit" size="lg" block>
                   Cancel
                 </Button>
               </Col>
@@ -41,4 +41,4 @@ class FormCrono extends React.Component {
   }
 }
 
-export default FormCrono;
+export default UpdateCrono;

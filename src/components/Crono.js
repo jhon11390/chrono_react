@@ -4,7 +4,13 @@ import { FaTrashAlt, FaEdit} from 'react-icons/fa';
 
 
 class CronoCard extends React.Component {
-  
+  constructor() {
+    super();
+    this.state = {
+      color: 'success',
+      stateCrono: 'Start'
+    }
+  }
   render(){
     return (
 	  	<Row className="justify-content-md-center mt-4">
@@ -30,13 +36,27 @@ class CronoCard extends React.Component {
                   </Col>
                 </Row>
               </Card.Text>
-              <Button variant="primary" size="lg" block>start</Button>
+              <Button variant={this.state.color} size="lg" block onClick={this.changeColor.bind(this)}>{this.state.stateCrono}</Button>
             </Card.Body>
           </Card>
         </Col>
       </Row>
     )
   }
+  changeColor(){
+    if(this.state.color === 'success'){
+      this.setState({
+        color: 'danger',
+        stateCrono: 'Stop'
+      })
+    } else {
+      this.setState({
+        color: 'success',
+        stateCrono: 'Start'
+      })
+    }
+  }
+
 }
 
 export default CronoCard;
