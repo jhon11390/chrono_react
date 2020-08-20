@@ -32,7 +32,7 @@ class CronoCard extends React.Component {
                 <Row>
                   <Col md={{ span: 2, offset: 10}}>
                     <Alert.Link href="#" onClick={() => this.props.delete(this.props.id)}><FaTrashAlt /> </Alert.Link>
-                    <Alert.Link href="#"><FaEdit /></Alert.Link>
+                    <Alert.Link href="#" onClick={() => this.props.update(this.props.id)}><FaEdit /></Alert.Link>
                   </Col>
                 </Row>
               </Card.Text>
