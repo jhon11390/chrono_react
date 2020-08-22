@@ -32,7 +32,7 @@ class UpdateCrono extends React.Component {
             </Form.Group>
             <Row>
               <Col md="6">
-                <Button variant="primary" type="submit" size="lg" block onClick={this.handlekeypressUpdate.bind(this)}>
+                <Button variant="primary" type="submit" size="lg" block onClick={this.handlekeypressUpdate.bind(this)} >
                   Update
                 </Button>
               </Col>
@@ -60,9 +60,9 @@ class UpdateCrono extends React.Component {
     this.setState({
       data: this.state.data.map((date, i) => 
         i === this.state.indice ? subindiceupdate : date
-      ),
-      indice: -1
+      )
     })
+    this.props.cancelar();
   }
 }
 
