@@ -4,13 +4,22 @@ import { FaTrashAlt, FaEdit} from 'react-icons/fa';
 
 
 class CronoCard extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.timer = null;
+    this.startedOn = 0;
     this.state = {
       color: 'success',
-      stateCrono: 'Start'
+      stateCrono: 'Start',
+      seconds: this.props.seconds,
+      minutes: this.props.minutes,
+      hours: this.props.hours,
+      intervalo: -1
     }
   }
+
+  
+
   render(){
     return (
 	  	<Row className="justify-content-md-center mt-4">
@@ -24,7 +33,7 @@ class CronoCard extends React.Component {
               <Card.Title>
                 <Row className="text-center">
                   <Col>
-                    <h1>{this.props.time}</h1>
+                    <h1>{this.state.hours.toString().length < 2 ? `0${this.state.hours}` : this.state.hours}:{this.state.minutes.toString().length < 2 ? `0${this.state.minutes}` : this.state.minutes}:{this.state.seconds.toString().length < 2 ? `0${this.state.seconds}` : this.state.seconds}</h1>
                   </Col>
                 </Row> 
               </Card.Title>
@@ -36,7 +45,7 @@ class CronoCard extends React.Component {
                   </Col>
                 </Row>
               </Card.Text>
-              <Button variant={this.state.color} size="lg" block onClick={this.changeColor.bind(this)}>{this.state.stateCrono}</Button>
+              <Button variant={this.state.color} size="lg" block onClick={this.iniciar.bind(this)}>{this.state.stateCrono}</Button>
             </Card.Body>
           </Card>
         </Col>
@@ -56,7 +65,26 @@ class CronoCard extends React.Component {
       })
     }
   }
+  
+  poder(){
+    setInterval(() => {
+      const maxtime = 59
+      this.setState({
+        seconds: this.state.seconds === maxtime ? 0 : this.state.seconds + 1, 
+        minutes: this.state.seconds === maxtime ?  this.state.minutes + 1: this.state.minutes,
+        hours: this.state.minutes === maxtime ? this.state.hours + 1 : this.state.hours
+      })
+    }, 1000);
+  }
 
+  iniciar(){
+    this.changeColor()
+    if(this.state.intervalo === -1){
+      this.poder()
+    } else {
+      clearInterval(this.poder())
+    }
+  }
 }
 
 export default CronoCard;

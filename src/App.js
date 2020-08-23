@@ -52,6 +52,9 @@ class App extends React.Component {
                   title= {date.title}
                   project= {date.project}
                   time= {date.time}
+                  seconds= {date.seconds}
+                  minutes= {date.minutes}
+                  hours= {date.hours}
                   delete= {this.deleteCrono}
                   update= {this.changeIndex}
                 />
@@ -86,7 +89,7 @@ class App extends React.Component {
   handlekeypress(e) {
     e.preventDefault()
     this.setState({
-      data: this.state.data.concat({id: this.state.number, title: this.state.title, project: this.state.project, time: "00:00:00"}),
+      data: this.state.data.concat({id: this.state.number, title: this.state.title, project: this.state.project, time: "00:00:00", seconds: 0, minutes: 0, hours: 0}),
       form_crono: false,
       title: '',
       project: '',
