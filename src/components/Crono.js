@@ -67,14 +67,16 @@ class CronoCard extends React.Component {
   }
   
   poder(){
-    setInterval(() => {
-      const maxtime = 59
-      this.setState({
-        seconds: this.state.seconds === maxtime ? 0 : this.state.seconds + 1, 
-        minutes: this.state.seconds === maxtime ?  this.state.minutes + 1: this.state.minutes,
-        hours: this.state.minutes === maxtime ? this.state.hours + 1 : this.state.hours
-      })
-    }, 1000);
+    this.setState({
+      intervalo: setInterval(() => {
+        const maxtime = 59
+        this.setState({
+          seconds: this.state.seconds === maxtime ? 0 : this.state.seconds + 1, 
+          minutes: this.state.seconds === maxtime ?  this.state.minutes + 1: this.state.minutes,
+          hours: this.state.minutes === maxtime ? this.state.hours + 1 : this.state.hours
+        })
+      }, 1000)
+    })
   }
 
   iniciar(){
@@ -82,7 +84,10 @@ class CronoCard extends React.Component {
     if(this.state.intervalo === -1){
       this.poder()
     } else {
-      clearInterval(this.poder())
+      clearInterval(this.state.intervalo)
+      this.setState({
+        intervalo: -1
+      })
     }
   }
 }
