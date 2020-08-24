@@ -14,7 +14,8 @@ class CronoCard extends React.Component {
       seconds: this.props.seconds,
       minutes: this.props.minutes,
       hours: this.props.hours,
-      intervalo: -1
+      intervalo: -1,
+      confirmhour: true
     }
   }
 
@@ -72,8 +73,9 @@ class CronoCard extends React.Component {
         const maxtime = 59
         this.setState({
           seconds: this.state.seconds === maxtime ? 0 : this.state.seconds + 1, 
-          minutes: this.state.seconds === maxtime ?  this.state.minutes + 1: this.state.minutes,
-          hours: this.state.minutes === maxtime ? this.state.hours + 1 : this.state.hours
+          minutes: this.state.seconds === maxtime ?  (this.state.minutes === maxtime ? 0 : this.state.minutes + 1): this.state.minutes,
+          hours: this.state.minutes === maxtime ? (this.state.confirmhour ? this.state.hours + 1 : this.state.hours) : this.state.hours,
+          confirmhour: this.state.minutes === maxtime ? false : true
         })
       }, 1000)
     })
