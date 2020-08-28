@@ -23,9 +23,9 @@ class CronoCard extends React.Component {
 
   render(){
     return (
-	  	<Row className="justify-content-md-center mt-4">
+	  	<Row className="justify-content-md-center mt-4" >
         <Col md="4">
-          <Card key={this.props.id}>
+          <Card>
             <Card.Header>
               <h2>{this.props.title}</h2>
               <p>{this.props.project}</p>

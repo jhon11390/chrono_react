@@ -21,7 +21,7 @@ class App extends React.Component {
       title: '',
       project: '',
       form_crono: false,
-      number: 4,
+      number: 3,
       indice: -1
     }
   }
@@ -48,6 +48,7 @@ class App extends React.Component {
             } else {
               return (
                 <CronoCard 
+                  key = {date.id}
                   id= {i}
                   title= {date.title}
                   project= {date.project}
