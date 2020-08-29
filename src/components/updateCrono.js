@@ -6,9 +6,7 @@ class UpdateCrono extends React.Component {
         super(props);
         this.state = {
           title: this.props.title,
-          project: this.props.project,
-          data: this.props.data,
-          indice: this.props.indice
+          project: this.props.project
         }
       }
   render(){
@@ -32,12 +30,12 @@ class UpdateCrono extends React.Component {
             </Form.Group>
             <Row>
               <Col md="6">
-                <Button variant="primary" type="submit" size="lg" block onClick={this.handlekeypressUpdate.bind(this)} >
+                <Button variant="primary" type="submit" size="lg" block  onClick={() => this.props.updatecard(this.state.title, this.state.project)}>
                   Update
                 </Button>
               </Col>
               <Col md="6">
-                <Button variant="danger" type="submit" size="lg" block onClick={this.props.cancelar}>
+                <Button variant="danger" type="submit" size="lg" block onClick={() => this.props.changecard(false)}>
                   Cancel
                 </Button>
               </Col>
@@ -47,23 +45,13 @@ class UpdateCrono extends React.Component {
       </Row>
     )
   }
+
   handleChangeUpdate = e => {
     this.setState({
       [e.target.name]: e.target.value
     })
   }
-  handlekeypressUpdate(e) {
-    e.preventDefault()
-    const subindiceupdate = this.state.data[this.state.indice]
-    subindiceupdate.title = this.state.title
-    subindiceupdate.project = this.state.project
-    this.setState({
-      data: this.state.data.map((date, i) => 
-        i === this.state.indice ? subindiceupdate : date
-      )
-    })
-    this.props.cancelar();
-  }
+  
 }
 
 export default UpdateCrono;

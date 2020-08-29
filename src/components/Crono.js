@@ -1,4 +1,5 @@
 import React from 'react';
+import UpdateCrono from './updateCrono'
 import {Row, Col, Card, Button, Alert} from "react-bootstrap";
 import { FaTrashAlt, FaEdit} from 'react-icons/fa';
 
@@ -6,52 +7,68 @@ import { FaTrashAlt, FaEdit} from 'react-icons/fa';
 class CronoCard extends React.Component {
   constructor(props) {
     super(props);
+    this.changecard= this.changecard.bind(this)
+    this.updatecard= this.updatecard.bind(this)
     this.timer = null;
     this.startedOn = 0;
     this.state = {
       color: 'success',
       stateCrono: 'Start',
+      title: this.props.title,
+      project: this.props.project,
       seconds: this.props.seconds,
       minutes: this.props.minutes,
       hours: this.props.hours,
       intervalo: -1,
-      confirmhour: true
+      confirmhour: true,
+      viewupdate: false
     }
   }
 
   
 
   render(){
-    return (
-	  	<Row className="justify-content-md-center mt-4" >
-        <Col md="4">
-          <Card>
-            <Card.Header>
-              <h2>{this.props.title}</h2>
-              <p>{this.props.project}</p>
-            </Card.Header>
-            <Card.Body>
-              <Card.Title>
-                <Row className="text-center">
-                  <Col>
-                    <h1>{this.state.hours.toString().length < 2 ? `0${this.state.hours}` : this.state.hours}:{this.state.minutes.toString().length < 2 ? `0${this.state.minutes}` : this.state.minutes}:{this.state.seconds.toString().length < 2 ? `0${this.state.seconds}` : this.state.seconds}</h1>
-                  </Col>
-                </Row> 
-              </Card.Title>
-              <Card.Text>
-                <Row>
-                  <Col md={{ span: 2, offset: 10}}>
-                    <Alert.Link href="#" onClick={() => this.props.delete(this.props.id)}><FaTrashAlt /> </Alert.Link>
-                    <Alert.Link href="#" onClick={() => this.props.update(this.props.id)}><FaEdit /></Alert.Link>
-                  </Col>
-                </Row>
-              </Card.Text>
-              <Button variant={this.state.color} size="lg" block onClick={this.iniciar.bind(this)}>{this.state.stateCrono}</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    )
+    if(this.state.viewupdate){
+      return (
+        <UpdateCrono 
+          title= {this.state.title}
+          project= {this.state.project}
+          changecard= {this.changecard}
+          updatecard= {this.updatecard}
+        />
+      )
+    } else {
+      return (
+	    	<Row className="justify-content-md-center mt-4" >
+          <Col md="4">
+            <Card>
+              <Card.Header>
+                <h2>{this.state.title}</h2>
+                <p>{this.state.project}</p>
+              </Card.Header>
+              <Card.Body>
+                <Card.Title>
+                  <Row className="text-center">
+                    <Col>
+                      <h1>{this.state.hours.toString().length < 2 ? `0${this.state.hours}` : this.state.hours}:{this.state.minutes.toString().length < 2 ? `0${this.state.minutes}` : this.state.minutes}:{this.state.seconds.toString().length < 2 ? `0${this.state.seconds}` : this.state.seconds}</h1>
+                    </Col>
+                  </Row> 
+                </Card.Title>
+                <Card.Text>
+                  <Row>
+                    <Col md={{ span: 2, offset: 10}}>
+                      <Alert.Link href="#" onClick={() => this.props.delete(this.props.id)}><FaTrashAlt /> </Alert.Link>
+                      <Alert.Link href="#" onClick={this.changecard.bind(this, true)}><FaEdit /></Alert.Link>
+                    </Col>
+                  </Row>
+                </Card.Text>
+                <Button variant={this.state.color} size="lg" block onClick={this.iniciar.bind(this)}>{this.state.stateCrono}</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      )
+    }
   }
   changeColor(){
     if(this.state.color === 'success'){
@@ -91,6 +108,20 @@ class CronoCard extends React.Component {
         intervalo: -1
       })
     }
+  }
+
+  changecard(valor){
+    this.setState({
+      viewupdate: valor
+    })
+  }
+
+  updatecard(title, project){
+    this.setState({
+      title: title,
+      project: project,
+      viewupdate: false
+    })
   }
 }
 
