@@ -54,14 +54,14 @@ class CronoCard extends React.Component {
                     </Col>
                   </Row> 
                 </Card.Title>
-                <Card.Text>
+                <Card.Title>
                   <Row>
                     <Col md={{ span: 2, offset: 10}}>
                       <Alert.Link href="#" onClick={() => this.props.delete(this.props.id)}><FaTrashAlt /> </Alert.Link>
                       <Alert.Link href="#" onClick={this.changecard.bind(this, true)}><FaEdit /></Alert.Link>
                     </Col>
                   </Row>
-                </Card.Text>
+                </Card.Title>
                 <Button variant={this.state.color} size="lg" block onClick={this.iniciar.bind(this)}>{this.state.stateCrono}</Button>
               </Card.Body>
             </Card>
