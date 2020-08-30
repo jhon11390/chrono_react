@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/jhon11390/chrono_react/static/css/main.5f361e03.chunk.css",
+    "main.js": "/jhon11390/chrono_react/static/js/main.31db4e3a.chunk.js",
+    "main.js.map": "/jhon11390/chrono_react/static/js/main.31db4e3a.chunk.js.map",
+    "runtime-main.js": "/jhon11390/chrono_react/static/js/runtime-main.f65bd3b3.js",
+    "runtime-main.js.map": "/jhon11390/chrono_react/static/js/runtime-main.f65bd3b3.js.map",
+    "static/js/2.15d67d29.chunk.js": "/jhon11390/chrono_react/static/js/2.15d67d29.chunk.js",
+    "static/js/2.15d67d29.chunk.js.map": "/jhon11390/chrono_react/static/js/2.15d67d29.chunk.js.map",
+    "index.html": "/jhon11390/chrono_react/index.html",
+    "precache-manifest.b79883b50509c5faab9afeb0fe4025bd.js": "/jhon11390/chrono_react/precache-manifest.b79883b50509c5faab9afeb0fe4025bd.js",
+    "service-worker.js": "/jhon11390/chrono_react/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/jhon11390/chrono_react/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.15d67d29.chunk.js.LICENSE.txt": "/jhon11390/chrono_react/static/js/2.15d67d29.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f65bd3b3.js",
+    "static/js/2.15d67d29.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.31db4e3a.chunk.js"
+  ]
+}
