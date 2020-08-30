@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/jhon11390/chrono_react/static/css/main.5f361e03.chunk.css",
-    "main.js": "/jhon11390/chrono_react/static/js/main.31db4e3a.chunk.js",
-    "main.js.map": "/jhon11390/chrono_react/static/js/main.31db4e3a.chunk.js.map",
-    "runtime-main.js": "/jhon11390/chrono_react/static/js/runtime-main.f65bd3b3.js",
-    "runtime-main.js.map": "/jhon11390/chrono_react/static/js/runtime-main.f65bd3b3.js.map",
-    "static/js/2.15d67d29.chunk.js": "/jhon11390/chrono_react/static/js/2.15d67d29.chunk.js",
-    "static/js/2.15d67d29.chunk.js.map": "/jhon11390/chrono_react/static/js/2.15d67d29.chunk.js.map",
-    "index.html": "/jhon11390/chrono_react/index.html",
-    "precache-manifest.b79883b50509c5faab9afeb0fe4025bd.js": "/jhon11390/chrono_react/precache-manifest.b79883b50509c5faab9afeb0fe4025bd.js",
-    "service-worker.js": "/jhon11390/chrono_react/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/jhon11390/chrono_react/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.15d67d29.chunk.js.LICENSE.txt": "/jhon11390/chrono_react/static/js/2.15d67d29.chunk.js.LICENSE.txt"
+    "main.css": "/chrono_react/static/css/main.5f361e03.chunk.css",
+    "main.js": "/chrono_react/static/js/main.c0f1e1a4.chunk.js",
+    "main.js.map": "/chrono_react/static/js/main.c0f1e1a4.chunk.js.map",
+    "runtime-main.js": "/chrono_react/static/js/runtime-main.e561b7fa.js",
+    "runtime-main.js.map": "/chrono_react/static/js/runtime-main.e561b7fa.js.map",
+    "static/js/2.15d67d29.chunk.js": "/chrono_react/static/js/2.15d67d29.chunk.js",
+    "static/js/2.15d67d29.chunk.js.map": "/chrono_react/static/js/2.15d67d29.chunk.js.map",
+    "index.html": "/chrono_react/index.html",
+    "precache-manifest.161e5d781fea3c354b74e4c2c68c4bc2.js": "/chrono_react/precache-manifest.161e5d781fea3c354b74e4c2c68c4bc2.js",
+    "service-worker.js": "/chrono_react/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/chrono_react/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.15d67d29.chunk.js.LICENSE.txt": "/chrono_react/static/js/2.15d67d29.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f65bd3b3.js",
+    "static/js/runtime-main.e561b7fa.js",
     "static/js/2.15d67d29.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.31db4e3a.chunk.js"
+    "static/js/main.c0f1e1a4.chunk.js"
   ]
 }
