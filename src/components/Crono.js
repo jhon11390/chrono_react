@@ -56,13 +56,13 @@ class CronoCard extends React.Component {
                 </Card.Title>
                 <Card.Title>
                   <Row>
-                    <Col md={{ span: 2, offset: 10}}>
-                      <Alert.Link href="#" onClick={() => this.props.delete(this.props.id)}><FaTrashAlt /> </Alert.Link>
+                    <Col md={{ span: 3, offset: 10}}>
+                      <Alert.Link href="#" onClick={this.deletethiscrono.bind(this)}><FaTrashAlt /> </Alert.Link>
                       <Alert.Link href="#" onClick={this.changecard.bind(this, true)}><FaEdit /></Alert.Link>
                     </Col>
                   </Row>
                 </Card.Title>
-                <Button variant={this.state.color} size="lg" block onClick={this.iniciar.bind(this)}>{this.state.stateCrono}</Button>
+                <Button variant={this.state.color} size="lg" block onClick={this.startcrono.bind(this)}>{this.state.stateCrono}</Button>
               </Card.Body>
             </Card>
           </Col>
@@ -84,7 +84,7 @@ class CronoCard extends React.Component {
     }
   }
   
-  poder(){
+  timercrono(){
     this.setState({
       intervalo: setInterval(() => {
         const maxtime = 59
@@ -98,10 +98,10 @@ class CronoCard extends React.Component {
     })
   }
 
-  iniciar(){
+  startcrono(){
     this.changeColor()
     if(this.state.intervalo === -1){
-      this.poder()
+      this.timercrono()
     } else {
       clearInterval(this.state.intervalo)
       this.setState({
@@ -122,6 +122,17 @@ class CronoCard extends React.Component {
       project: project,
       viewupdate: false
     })
+  }
+  deletethiscrono(){
+    if(this.state.color === "danger"){
+      this.startcrono()
+    } else {
+      clearInterval(this.state.intervalo)
+      this.setState({
+        intervalo: -1
+      })
+    }
+    this.props.delete(this.props.id)
   }
 }
 

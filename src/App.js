@@ -41,6 +41,7 @@ class App extends React.Component {
                 minutes= {date.minutes}
                 hours= {date.hours}
                 delete= {this.deleteCrono}
+                data= {this.state.data}
               />
             )
           })}
