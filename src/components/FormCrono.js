@@ -24,12 +24,12 @@ class FormCrono extends React.Component {
             </Form.Group>
             <Row>
               <Col md="6">
-                <Button variant="success" type="submit" size="lg" block onClick={this.props.crear}>
+                <Button variant="success"  size="lg" block onClick={this.props.crear}>
                   Create
                 </Button>
               </Col>
               <Col md="6">
-                <Button variant="danger" type="submit" size="lg" block onClick={this.props.cancelar}>
+                <Button variant="danger"  size="lg" block onClick={this.props.cancelar}>
                   Cancel
                 </Button>
               </Col>

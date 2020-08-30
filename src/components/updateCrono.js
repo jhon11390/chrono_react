@@ -30,12 +30,12 @@ class UpdateCrono extends React.Component {
             </Form.Group>
             <Row>
               <Col md="6">
-                <Button variant="primary" type="submit" size="lg" block  onClick={() => this.props.updatecard(this.state.title, this.state.project)}>
+                <Button variant="primary"  size="lg" block  onClick={() => this.props.updatecard(this.state.title, this.state.project)}>
                   Update
                 </Button>
               </Col>
               <Col md="6">
-                <Button variant="danger" type="submit" size="lg" block onClick={() => this.props.changecard(false)}>
+                <Button variant="danger"  size="lg" block onClick={() => this.props.changecard(false)}>
                   Cancel
                 </Button>
               </Col>
